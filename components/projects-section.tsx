@@ -8,22 +8,22 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "EduStream",
+    title: "Blog Apps",
     description:
       "A comprehensive e-learning platform with live streaming, course management, and interactive quizzes.",
     image: "/placeholder.svg?height=300&width=500",
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://next-js-final-blog-project.vercel.app/",
+    githubUrl: "https://github.com/mdnasimhosen22/Blog-project-with-next-js",
   },
   {
-    title: "TaskFlow",
+    title: "My Shop",
     description:
       "Modern project management tool with real-time collaboration, Kanban boards, and team analytics.",
     image: "/placeholder.svg?height=300&width=500",
     tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://earnest-strudel-e491cb.netlify.app/",
+    githubUrl: "https://github.com/mdnasimhosen22/react-project",
   },
   {
     title: "ShopSmart",
@@ -40,8 +40,8 @@ const projects = [
       "Social networking platform for developers to share projects, collaborate, and find opportunities.",
     image: "/placeholder.svg?height=300&width=500",
     tags: ["React", "GraphQL", "AWS", "Redis"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://thatix-resturent.netlify.app/",
+    githubUrl: "https://github.com/mdnasimhosen22/meal-fiender",
   },
 ];
 
@@ -129,13 +129,21 @@ export function ProjectsSection() {
                 {/* Links */}
                 <div className="flex gap-3">
                   <Button size="sm" asChild className="gap-2">
-                    <a href={project.liveUrl}>
+                    <a
+                      target="-blank"
+                      rel="noopener noreferrer"
+                      href={project.liveUrl}
+                    >
                       <ExternalLink className="h-4 w-4" />
                       Live Demo
                     </a>
                   </Button>
                   <Button size="sm" variant="outline" asChild className="gap-2">
-                    <a href={project.githubUrl}>
+                    <a
+                      target="-blank"
+                      rel="noopener noreferrer"
+                      href={project.githubUrl}
+                    >
                       <Github className="h-4 w-4" />
                       Code
                     </a>

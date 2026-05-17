@@ -1,25 +1,37 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Twitter,
+} from "lucide-react";
+import { useState } from "react";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@johndoe.dev" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-  { icon: MapPin, label: "Location", value: "San Francisco, CA" },
-]
+  { icon: Mail, label: "Email", value: "mnasimhose11@gmail.com" },
+  { icon: Phone, label: "Phone", value: "01585984736" },
+  { icon: MapPin, label: "Location", value: "Bogura,Bogura sodor" },
+];
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/mdnasimhosen22", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/md-nasim-hosen-35308a33b/",
+    label: "LinkedIn",
+  },
   { icon: Twitter, href: "#", label: "Twitter" },
-]
+];
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -27,54 +39,56 @@ export function ContactSection() {
     email: "",
     subject: "",
     message: "",
-  })
-  const [errors, setErrors] = useState<Record<string, string>>({})
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validateForm = () => {
-    const newErrors: Record<string, string> = {}
-    
+    const newErrors: Record<string, string> = {};
+
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required"
+      newErrors.name = "Name is required";
     }
-    
+
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required"
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Invalid email address"
+      newErrors.email = "Invalid email address";
     }
-    
+
     if (!formData.subject.trim()) {
-      newErrors.subject = "Subject is required"
+      newErrors.subject = "Subject is required";
     }
-    
+
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required"
+      newErrors.message = "Message is required";
     } else if (formData.message.length < 10) {
-      newErrors.message = "Message must be at least 10 characters"
+      newErrors.message = "Message must be at least 10 characters";
     }
-    
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (validateForm()) {
       // Handle form submission
-      console.log("Form submitted:", formData)
+      console.log("Form submitted:", formData);
       // Reset form
-      setFormData({ name: "", email: "", subject: "", message: "" })
+      setFormData({ name: "", email: "", subject: "", message: "" });
     }
-  }
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error on change
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }))
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  }
+  };
 
   return (
     <section id="contact" className="py-20">
@@ -88,13 +102,16 @@ export function ContactSection() {
         >
           <div className="inline-flex items-center gap-2 text-primary mb-4">
             <Mail className="h-5 w-5" />
-            <span className="text-sm font-medium tracking-widest uppercase">Contact</span>
+            <span className="text-sm font-medium tracking-widest uppercase">
+              Contact
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Get In Touch
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? Feel free to reach out!
+            Have a project in mind or want to collaborate? Feel free to reach
+            out!
           </p>
         </motion.div>
 
@@ -108,7 +125,9 @@ export function ContactSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-6">
+                Contact Information
+              </h3>
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
@@ -116,7 +135,9 @@ export function ContactSection() {
                       <item.icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {item.label}
+                      </p>
                       <p className="font-medium">{item.value}</p>
                     </div>
                   </div>
@@ -132,6 +153,8 @@ export function ContactSection() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                     aria-label={social.label}
                   >
@@ -159,13 +182,15 @@ export function ContactSection() {
                         <Input
                           id="name"
                           name="name"
-                          placeholder="John Doe"
+                          placeholder="Enter your name"
                           value={formData.name}
                           onChange={handleChange}
                           className={errors.name ? "border-destructive" : ""}
                         />
                         {errors.name && (
-                          <p className="text-sm text-destructive mt-1">{errors.name}</p>
+                          <p className="text-sm text-destructive mt-1">
+                            {errors.name}
+                          </p>
                         )}
                       </Field>
                       <Field>
@@ -174,13 +199,15 @@ export function ContactSection() {
                           id="email"
                           name="email"
                           type="email"
-                          placeholder="john@example.com"
+                          placeholder="Enter your email"
                           value={formData.email}
                           onChange={handleChange}
                           className={errors.email ? "border-destructive" : ""}
                         />
                         {errors.email && (
-                          <p className="text-sm text-destructive mt-1">{errors.email}</p>
+                          <p className="text-sm text-destructive mt-1">
+                            {errors.email}
+                          </p>
                         )}
                       </Field>
                     </div>
@@ -195,7 +222,9 @@ export function ContactSection() {
                         className={errors.subject ? "border-destructive" : ""}
                       />
                       {errors.subject && (
-                        <p className="text-sm text-destructive mt-1">{errors.subject}</p>
+                        <p className="text-sm text-destructive mt-1">
+                          {errors.subject}
+                        </p>
                       )}
                     </Field>
                     <Field>
@@ -210,7 +239,9 @@ export function ContactSection() {
                         className={errors.message ? "border-destructive" : ""}
                       />
                       {errors.message && (
-                        <p className="text-sm text-destructive mt-1">{errors.message}</p>
+                        <p className="text-sm text-destructive mt-1">
+                          {errors.message}
+                        </p>
                       )}
                     </Field>
                   </FieldGroup>
@@ -225,5 +256,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

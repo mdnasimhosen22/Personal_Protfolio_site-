@@ -12,8 +12,8 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
     >
       {/* Background Gradient */}
-      <div className="absolute inset-0 z-2 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-2 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none" />
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src="https://images.unsplash.com/photo-1695173583133-c19731e2df44"
           alt="Modern tech portfolio hero background"
@@ -55,8 +55,8 @@ export function HeroSection() {
               transition={{ delay: 0.4 }}
               className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0"
             >
-              I craft beautiful, performant web applications with modern
-              technologies. Passionate about creating exceptional user
+              I craft beautiful, performant full-stack web applications with
+              modern technologies. Passionate about creating exceptional user
               experiences and writing clean, maintainable code.
             </motion.p>
 
@@ -100,6 +100,8 @@ export function HeroSection() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                   aria-label={social.label}
                 >
@@ -162,7 +164,7 @@ export function HeroSection() {
                 }}
                 className="absolute -bottom-4 -left-4 bg-card border border-border rounded-lg px-3 py-2 shadow-lg"
               >
-                <span className="text-sm font-medium">30+ Projects</span>
+                <span className="text-sm font-medium">20+ Projects</span>
               </motion.div>
             </div>
           </motion.div>

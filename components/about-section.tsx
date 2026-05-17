@@ -41,10 +41,11 @@ export function AboutSection() {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I&apos;m a passionate Full Stack Developer with over 5 years of
-              experience building web applications that solve real-world
-              problems. I specialize in modern JavaScript technologies and have
-              a keen eye for creating intuitive user interfaces.
+              I&apos;m a dedicated Full Stack Developer with 2 years of
+              intensive learning and hands-on experience building modern web
+              applications. I specialize in the MERN stack and Next.js, with a
+              strong focus on crafting seamless, user-centric digital
+              experiences.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               My journey in tech started with a curiosity about how websites

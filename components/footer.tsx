@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Code2, Github, Linkedin, Twitter, Heart } from "lucide-react"
-import Link from "next/link"
+import { Code2, Github, Heart, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 const footerLinks = [
   { name: "Home", href: "#home" },
@@ -10,13 +10,17 @@ const footerLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Blog", href: "#blog" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/mdnasimhosen22", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/md-nasim-hosen-35308a33b/",
+    label: "LinkedIn",
+  },
   { icon: Twitter, href: "#", label: "Twitter" },
-]
+];
 
 export function Footer() {
   return (
@@ -52,6 +56,8 @@ export function Footer() {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label={social.label}
               >
@@ -64,10 +70,11 @@ export function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-            Made with <Heart className="h-4 w-4 text-red-500 fill-current" /> by John Doe &copy; {new Date().getFullYear()}
+            Made with <Heart className="h-4 w-4 text-red-500 fill-current" /> by
+            Nasim Hosen &copy; {new Date().getFullYear()}
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
