@@ -1,35 +1,39 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Lightbulb, CheckCircle2, Circle, ArrowRight } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle2, Circle, Lightbulb } from "lucide-react";
 
 const learningItems = [
   {
     title: "Industry-Level APIs",
-    description: "Building production-grade REST and GraphQL APIs with authentication, rate limiting, and documentation.",
+    description:
+      "Building production-grade REST and GraphQL APIs with authentication, rate limiting, and documentation.",
     status: "in-progress",
-    progress: 75,
+    progress: 45,
   },
   {
     title: "Advanced Architecture",
-    description: "Microservices, event-driven architecture, and design patterns for scalable systems.",
+    description:
+      "Microservices, event-driven architecture, and design patterns for scalable systems.",
     status: "in-progress",
-    progress: 60,
+    progress: 30,
   },
   {
     title: "Cloud Infrastructure",
-    description: "AWS services, containerization with Docker, and Kubernetes orchestration.",
+    description:
+      "AWS services, containerization with Docker, and Kubernetes orchestration.",
     status: "upcoming",
     progress: 30,
   },
   {
     title: "Performance Optimization",
-    description: "Advanced caching strategies, database optimization, and frontend performance.",
+    description:
+      "Advanced caching strategies, database optimization, and frontend performance.",
     status: "completed",
     progress: 100,
   },
-]
+];
 
 export function CurrentlyLearning() {
   return (
@@ -44,7 +48,9 @@ export function CurrentlyLearning() {
         >
           <div className="inline-flex items-center gap-2 text-primary mb-4">
             <Lightbulb className="h-5 w-5" />
-            <span className="text-sm font-medium tracking-widest uppercase">Growth</span>
+            <span className="text-sm font-medium tracking-widest uppercase">
+              Growth
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Currently Learning
@@ -105,7 +111,7 @@ export function CurrentlyLearning() {
                       <p className="text-sm text-muted-foreground mb-3">
                         {item.description}
                       </p>
-                      
+
                       {/* Progress Bar */}
                       <div className="h-2 bg-secondary rounded-full overflow-hidden">
                         <motion.div
@@ -117,8 +123,8 @@ export function CurrentlyLearning() {
                             item.status === "completed"
                               ? "bg-green-500"
                               : item.status === "in-progress"
-                              ? "bg-primary"
-                              : "bg-muted-foreground/50"
+                                ? "bg-primary"
+                                : "bg-muted-foreground/50"
                           }`}
                         />
                       </div>
@@ -136,5 +142,5 @@ export function CurrentlyLearning() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

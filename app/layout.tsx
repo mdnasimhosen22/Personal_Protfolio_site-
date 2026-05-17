@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "John Doe | Full Stack Developer",
+  title: "Nasim dev | Full Stack Developer",
   description:
     "Professional portfolio of John Doe - Full Stack Developer specializing in React, Next.js, and modern web technologies.",
   keywords: [

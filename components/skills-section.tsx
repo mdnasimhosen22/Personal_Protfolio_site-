@@ -7,10 +7,10 @@ import { useRef } from "react";
 const skills = [
   { name: "HTML", level: 95, icon: FileCode, color: "bg-orange-500" },
   { name: "CSS", level: 90, icon: Code2, color: "bg-blue-500" },
-  { name: "JavaScript", level: 88, icon: Braces, color: "bg-yellow-500" },
-  { name: "React", level: 70, icon: Atom, color: "bg-cyan-500" },
-  { name: "Next.js", level: 60, icon: Code2, color: "bg-foreground" },
-  { name: "Node.js", level: 30, icon: Server, color: "bg-green-500" },
+  { name: "JavaScript", level: 50, icon: Braces, color: "bg-yellow-500" },
+  { name: "React", level: 40, icon: Atom, color: "bg-cyan-500" },
+  { name: "Next.js", level: 30, icon: Code2, color: "bg-foreground" },
+  { name: "Node.js", level: 20, icon: Server, color: "bg-green-500" },
   { name: "Java", level: 10, icon: Coffee, color: "bg-red-500" },
 ];
 
